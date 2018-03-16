@@ -15,8 +15,8 @@ See [this Codepen][codepen] for a demonstration.
 
 ```css
 .foo {
-  grid-column: 1 / -1;
   display: grid;
+  grid-column: 1 / -1;
   grid-template-columns: inherit;
   grid-gap: inherit;
   margin: 0;
