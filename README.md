@@ -7,8 +7,6 @@
 
 See [this Codepen][codepen] for a demonstration.
 
-Open to suggestions and PRs for other hacks/patterns that could be included to mimic more advanced subgrid behavior.
-
 ```css
 .foo {
   display: subgrid;
@@ -26,13 +24,7 @@ Open to suggestions and PRs for other hacks/patterns that could be included to m
 }
 ```
 
-## Usage
-
-```js
-postcss([ require('postcss-subgrid') ])
-```
-
-See [PostCSS] docs for examples for your environment.
+Open to suggestions and PRs for other hacks/patterns that could be included to mimic more advanced subgrid behavior.
 
 [spec]: https://www.w3.org/TR/css-grid-2/#subgrids
 [PostCSS]: https://github.com/postcss/postcss
