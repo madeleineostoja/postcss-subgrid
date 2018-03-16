@@ -7,6 +7,8 @@
 
 See [this Codepen][codepen] for a demonstration.
 
+Open to suggestions and PRs for other hacks/patterns that could be included to mimic more advanced subgrid behavior.
+
 ```css
 .foo {
   display: subgrid;
