@@ -1,5 +1,5 @@
 # PostCSS Subgrid
-![ci-img][ci]
+![[][ci-img]][ci]
 
 [PostCSS] plugin that shims some _very_ basic behavior of the proposed CSS grid `display: subgrid` [spec].
 
