@@ -1,9 +1,9 @@
 # PostCSS Subgrid
-![[][ci-img]][ci]
+[![][ci-img]][ci]
 
-[PostCSS] plugin that shims some _very_ basic behavior of the proposed CSS `display: subgrid` [spec].
+[PostCSS] plugin that shims basic behavior of the proposed CSS `display: subgrid` [spec].
 
-**Note:** This plugin only provides a shorthand for mimicing a single use-case for CSS subgrids: inheriting the parent grid for full-width containers with placed children.
+**Note:** This plugin only provides a shorthand for monkey-patching a single use-case for CSS subgrids: inheriting the parent grid for full-width containers with placed children.
 
 See [this Codepen][codepen] for a demonstration.
 
@@ -24,7 +24,7 @@ See [this Codepen][codepen] for a demonstration.
 }
 ```
 
-Open to suggestions and PRs for other hacks/patterns that could be included to mimic more advanced subgrid behavior.
+Open to suggestions and PRs for other hacks/patterns that could be included to shim more advanced subgrid behavior.
 
 [spec]: https://www.w3.org/TR/css-grid-2/#subgrids
 [PostCSS]: https://github.com/postcss/postcss
