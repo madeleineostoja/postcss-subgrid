@@ -7,12 +7,14 @@
 
 See [this Codepen][codepen] for a demonstration.
 
+#### Input
 ```css
 .foo {
   display: subgrid;
 }
 ```
 
+#### Output
 ```css
 .foo {
   display: grid;
