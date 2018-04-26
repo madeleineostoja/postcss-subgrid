@@ -1,4 +1,4 @@
-var postcss = require('postcss');
+const postcss = require('postcss');
 
 const PROPS = [
   { prop: 'grid-column', value: '1 / -1' },
@@ -11,13 +11,11 @@ const PROPS = [
 module.exports = postcss.plugin('postcss-subgrid', () => {
 
   return root => {
-    root.walkRules(rule => {
-      rule.walkDecls('display', decl => {
-        if (decl.value === 'subgrid') {
-          decl.value = 'grid';
-          PROPS.reverse().forEach(prop => decl.after(prop));
-        }
-      });
+    root.walkDecls('display', decl => {
+      if (decl.value === 'subgrid') {
+        decl.value = 'grid';
+        PROPS.reverse().forEach(prop => decl.after(prop));
+      }
     });
   };
 });
