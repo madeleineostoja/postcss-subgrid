@@ -9,9 +9,13 @@ const PROPS = [
 module.exports = postcss.plugin('postcss-subgrid', () => {
   return root => {
     root.walkDecls('display', decl => {
+      let { important } = decl;
+
       if (decl.value === 'subgrid') {
         decl.value = 'grid';
-        PROPS.reverse().forEach(prop => decl.after(prop));
+        PROPS.reverse().forEach(prop =>
+          decl.after(Object.assign(prop, { important }))
+        );
       }
     });
   };

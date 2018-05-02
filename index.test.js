@@ -17,3 +17,11 @@ it('shims display: subgrid', () => {
     {}
   );
 });
+
+it('carries !important', () => {
+  return run(
+    'a{ display: subgrid !important; }',
+    'a{ display: grid !important; grid-gap: inherit !important; grid-template: inherit !important; grid-column: 1 / -1 !important; }',
+    {}
+  );
+});
