@@ -1,6 +1,6 @@
 {
   "name": "postcss-subgrid",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "PostCSS plugin that shims very basic behavior of the proposed CSS subgrid spec",
   "keywords": [
     "postcss",
