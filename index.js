@@ -1,12 +1,13 @@
 const postcss = require('postcss');
 
-const PROPS = [
-  { prop: 'grid-column', value: '1 / -1' },
-  { prop: 'grid-template', value: 'inherit' },
-  { prop: 'grid-gap', value: 'inherit' }
-];
+module.exports = postcss.plugin('postcss-subgrid', opts => {
+  const PROPS = [
+    { prop: 'grid-column', value: opts.ieHack ? '1 / 99' : '1 / -1' },
+    { prop: 'grid-template-columns', value: 'inherit' },
+    { prop: 'grid-template-rows', value: 'inherit' },
+    { prop: 'grid-gap', value: 'inherit' }
+  ];
 
-module.exports = postcss.plugin('postcss-subgrid', () => {
   return root => {
     root.walkDecls('display', decl => {
       let { important } = decl;

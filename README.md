@@ -22,7 +22,24 @@ See **[this Codepen][codepen]** for a demonstration.
 .foo {
   display: grid;
   grid-column: 1 / -1;
-  grid-template: inherit;
+  grid-template-columns: inherit;
+  grid-template-rows: inherit;
+  grid-gap: inherit;
+}
+```
+
+## Shimming IE for autoprefixer
+
+If you are using [autoprefixer][autoprefixer] to attempt to shim grids in IE11, then `postcss-subgrid` can output a hack for the `grid-column` property that is able to be transformed by autoprefixer, since negative column values cannot be.
+
+Pass `ieHack: true` to `postcss-subgrid` and it will output the following declaration instead
+
+```css
+.foo {
+  display: grid;
+  grid-column: 1 / 99;
+  grid-template-columns: inherit;
+  grid-template-rows: inherit;
   grid-gap: inherit;
 }
 ```
@@ -36,3 +53,4 @@ Open to PRs for other hacks/patterns that could be included to shim more subgrid
 [codepen]: https://codepen.io/seaneking/pen/MVePPv
 [ci-img]: https://travis-ci.org/seaneking/postcss-subgrid.svg
 [ci]: https://travis-ci.org/seaneking/postcss-subgrid
+[autoprefxer]: https://github.com/postcss/autoprefixer
