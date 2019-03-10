@@ -29,7 +29,7 @@ See **[this Codepen][codepen]** for a demonstration.
 
 ## Shimming IE for autoprefixer
 
-If you are using [autoprefixer][autoprefixer] to attempt to shim grids in IE11, then `postcss-subgrid` can output a hack for the `grid-column` property that is able to be transformed by autoprefixer, since negative column values cannot be. It also outputs an empty `grid-template-areas` property and an explicit `grid-template-columns` inherit to satisfy autoprefier's IE grid shimming if it is being used.
+If you are using [autoprefixer][autoprefixer] to attempt to shim grids in IE11, then `postcss-subgrid` can output a hack for the `grid-column` property as well as an empty `grid-template-areas` and an explicit `grid-template-columns` inheritance in order for the subgrid to be transformed properly.
 
 Pass `ieHack: true` to `postcss-subgrid` and it will output the following declaration instead
 
@@ -53,4 +53,4 @@ Open to PRs for other hacks/patterns that could be included to shim more subgrid
 [codepen]: https://codepen.io/seaneking/pen/MVePPv
 [ci-img]: https://travis-ci.org/seaneking/postcss-subgrid.svg
 [ci]: https://travis-ci.org/seaneking/postcss-subgrid
-[autoprefxer]: https://github.com/postcss/autoprefixer
+[autoprefixer]: https://github.com/postcss/autoprefixer
