@@ -36,9 +36,7 @@ Pass `ieHack: true` to `postcss-subgrid` and it will output the following declar
 .foo {
   display: grid;
   grid-column: 1 / 99;
-  grid-template-columns: inherit;
-  grid-template-rows: inherit;
-  grid-gap: inherit;
+  grid: inherit;
 }
 ```
 
