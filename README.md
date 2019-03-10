@@ -22,9 +22,7 @@ See **[this Codepen][codepen]** for a demonstration.
 .foo {
   display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: inherit;
-  grid-template-rows: inherit;
-  grid-gap: inherit;
+  grid: inherit;
 }
 ```
 

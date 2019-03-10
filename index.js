@@ -3,9 +3,7 @@ const postcss = require('postcss');
 module.exports = postcss.plugin('postcss-subgrid', opts => {
   const PROPS = [
     { prop: 'grid-column', value: opts.ieHack ? '1 / 99' : '1 / -1' },
-    { prop: 'grid-template-columns', value: 'inherit' },
-    { prop: 'grid-template-rows', value: 'inherit' },
-    { prop: 'grid-gap', value: 'inherit' }
+    { prop: 'grid', value: 'inherit' }
   ];
 
   return root => {
