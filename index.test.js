@@ -13,7 +13,7 @@ function run(input, output, opts) {
 it('shims display: subgrid', () => {
   return run(
     'a{ display: subgrid; }',
-    'a{ display: grid; grid-column: 1 / -1; grid-template-columns: inherit; grid-template-rows: inherit; grid-gap: inherit; }',
+    'a{ display: grid; grid-column: 1 / -1; grid: inherit; grid-gap: inherit; }',
     {}
   );
 });
@@ -21,7 +21,7 @@ it('shims display: subgrid', () => {
 it('applies a hack for IE autoprefixer when option enabled', () => {
   return run(
     'a{ display: subgrid; }',
-    'a{ display: grid; grid-column: 1 / 99; grid-template-columns: inherit; grid-template-rows: inherit; grid-gap: inherit; }',
+    'a{ display: grid; grid-column: 1 / 99; grid: inherit; grid-gap: inherit; grid-template-columns: inherit; grid-template-areas: ; }',
     { ieHack: true }
   );
 });
@@ -29,7 +29,7 @@ it('applies a hack for IE autoprefixer when option enabled', () => {
 it('carries !important', () => {
   return run(
     'a{ display: subgrid !important; }',
-    'a{ display: grid !important; grid-column: 1 / -1 !important; grid-template-columns: inherit !important; grid-template-rows: inherit !important; grid-gap: inherit !important; }',
+    'a{ display: grid !important; grid-column: 1 / -1 !important; grid: inherit !important; grid-gap: inherit !important; }',
     {}
   );
 });
