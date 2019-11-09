@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/seaneking/postcss-subgrid",
   "dependencies": {
-    "postcss": "^7.0.14"
+    "postcss": "^7.0.21"
   },
   "devDependencies": {
-    "eslint": "^5.15.1",
-    "eslint-plugin-jest": "^22.3.0",
-    "jest": "^24.3.1"
+    "eslint": "^6.6.0",
+    "eslint-plugin-jest": "^23.0.3",
+    "jest": "^24.9.0"
   },
   "scripts": {
     "test": "jest && eslint *.js"
