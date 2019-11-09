@@ -21,7 +21,23 @@ it('shims display: subgrid', () => {
 it('applies a hack for IE autoprefixer when option enabled', () => {
   return run(
     'a{ display: subgrid; }',
-    'a{ display: grid; grid-column: 1 / 99; grid: inherit; grid-gap: inherit; grid-template-columns: inherit; grid-template-areas: ; }',
+    `a{ display: grid; grid-column: 1 / 99; grid: inherit; grid-gap: inherit; grid-template-columns: inherit; grid-template-areas: ; }
+a > :nth-child(1){ -ms-grid-row: 1; }
+a > :nth-child(2){ -ms-grid-row: 2; }
+a > :nth-child(3){ -ms-grid-row: 3; }
+a > :nth-child(4){ -ms-grid-row: 4; }
+a > :nth-child(5){ -ms-grid-row: 5; }`,
+    { ieHack: true }
+  );
+});
+
+it('accepts a custom ms-subgrid-rows value when hacking IE', () => {
+  return run(
+    'a{ display: subgrid; -ms-subgrid-rows: 3; }',
+    `a{ display: grid; grid-column: 1 / 99; grid: inherit; grid-gap: inherit; grid-template-columns: inherit; grid-template-areas: ; }
+a > :nth-child(1){ -ms-grid-row: 1; }
+a > :nth-child(2){ -ms-grid-row: 2; }
+a > :nth-child(3){ -ms-grid-row: 3; }`,
     { ieHack: true }
   );
 });

@@ -29,9 +29,16 @@ See **[this Codepen][codepen]** for a demonstration.
 
 ## Shimming IE for autoprefixer
 
-If you are using [autoprefixer][autoprefixer] to attempt to shim grids in IE11, then `postcss-subgrid` can output a hack for the `grid-column` property as well as an empty `grid-template-areas` and an explicit `grid-template-columns` inheritance in order for the subgrid to be transformed properly.
+If you are using [autoprefixer][autoprefixer] to attempt to shim grids in IE11, then pass `ieHack: true` to `postcss-subgrid`. It will output a hack for the `grid-column` property as well as an empty `grid-template-areas` and an explicit `grid-template-columns` inheritance in order for the subgrid to be transformed properly.
 
-Pass `ieHack: true` to `postcss-subgrid` and it will output the following declaration instead
+It will also generate explicit row placements for immediate children of the subgrid. You can configure how many chidren rows to create using the `-ms-subgrid-rows` meta property, which defaults to `5`;
+
+```css
+.foo {
+  display: subgrid;
+  -ms-subgrid-rows: 2;
+}
+```
 
 ```css
 .foo {
@@ -42,11 +49,19 @@ Pass `ieHack: true` to `postcss-subgrid` and it will output the following declar
   grid-template-columns: inherit;
   grid-template-areas: ;
 }
+
+.foo > :nth-child(1) {
+  -ms-grid-row: 1;
+}
+
+.foo > :nth-child(2) {
+  -ms-grid-row: 2;
+}
 ```
 
 ---
 
-Open to PRs for other hacks/patterns that could be included to shim more subgrid behavior. Eg: Could we find the parent grid and use that to calculate a proper subgrid template?
+Open to PRs for other hacks/patterns that could be included to shim more subgrid behavior
 
 [spec]: https://www.w3.org/TR/css-grid-2/#subgrids
 [postcss]: https://github.com/postcss/postcss
