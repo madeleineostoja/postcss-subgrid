@@ -55,5 +55,15 @@ module.exports = postcss.plugin('postcss-subgrid', ({ ieHack }) => {
         }
       }
     });
+
+    // Apply MS rows to other -ms-subgrid-rows props
+    root.walkDecls('-ms-subgrid-rows', decl => {
+      const { value, parent } = decl;
+      decl.remove();
+
+      for (let i = value; i > 0; i--) {
+        root.insertAfter(parent, createIERow(parent, i));
+      }
+    });
   };
 });

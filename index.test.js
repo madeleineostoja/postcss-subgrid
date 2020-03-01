@@ -42,6 +42,23 @@ a > :nth-child(3){ -ms-grid-row: 3; }`,
   );
 });
 
+it('shims -ms-subgrid-rows on non-subgrid parents', () => {
+  return run(
+    'a{ -ms-subgrid-rows: 3; }',
+    `a{ }
+a > :nth-child(1){
+    -ms-grid-row: 1
+}
+a > :nth-child(2){
+    -ms-grid-row: 2
+}
+a > :nth-child(3){
+    -ms-grid-row: 3
+}`,
+    {}
+  );
+});
+
 it('carries !important', () => {
   return run(
     'a{ display: subgrid !important; }',
