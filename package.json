@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/seaneking/postcss-subgrid",
   "dependencies": {
-    "postcss": "^7.0.21"
+    "postcss": "^8.2.10"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
